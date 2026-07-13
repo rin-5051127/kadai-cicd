@@ -3,7 +3,12 @@ version: 0.2
 phases:
   build:
     commands:
+      - echo "===== src確認 ====="
+      - ls -l src
+      - echo "===== index.html中身 ====="
+      - cat src/index.html
       - aws deploy push --application-name kadai-codedeploy --s3-location s3://kadai-s3bucket/artifact.zip --source src
+
 artifacts:
   files:
     - '**/*'
